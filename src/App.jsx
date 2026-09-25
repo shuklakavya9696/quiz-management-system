@@ -5,30 +5,30 @@ import AdminDashboard from "./AdminDashboard";
 import Quiz from "./Quiz";
 
 function App() {
-  const path = window.location.pathname;
+  const route = window.location.hash.replace("#", "") || "/";
 
   // Student Dashboard
-  if (path === "/student-dashboard") {
+  if (route === "/student-dashboard") {
     return <StudentDashboard />;
   }
 
   // Quiz
-  if (path === "/quiz") {
+  if (route === "/quiz") {
     return <Quiz />;
   }
 
   // Admin Dashboard
-  if (path === "/admin-dashboard") {
+  if (route === "/admin-dashboard") {
     return <AdminDashboard />;
   }
 
   // Student Login
-  if (path === "/student-login") {
+  if (route === "/student-login") {
     return <StudentLogin />;
   }
 
   // Admin Login
-  if (path === "/admin-login") {
+  if (route === "/admin-login") {
     return <AdminLogin />;
   }
 
@@ -43,7 +43,7 @@ function App() {
 
       <button
         onClick={() => {
-          window.location.href = "/student-login";
+          window.location.hash = "/student-login";
         }}
       >
         Student Login
@@ -53,7 +53,7 @@ function App() {
 
       <button
         onClick={() => {
-          window.location.href = "/admin-login";
+          window.location.hash = "/admin-login";
         }}
       >
         Admin Login

@@ -16,7 +16,7 @@ function StudentLogin() {
     alert("Login successful!");
 
     // Student Dashboard open
-    window.location.href = "/student-dashboard";
+    window.location.hash = "/student-dashboard";
   };
 
   return (
